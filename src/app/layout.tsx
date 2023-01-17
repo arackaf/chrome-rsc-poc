@@ -21,6 +21,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <header dangerouslySetInnerHTML={{ __html: headerContent }}></header>
 
+        <div>
+          <template shadowroot="open">
+            <h1>Shadow DOM content</h1>
+            <slot></slot>
+            <h1>More Shadow DOM content</h1>
+          </template>
+          <span>This is light dom content</span>
+        </div>
+
         {children}
 
         <footer>RSC FOOTER</footer>
