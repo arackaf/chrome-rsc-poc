@@ -1,4 +1,15 @@
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const delay = () => new Promise((res) => setTimeout(res, 100));
+
+async function getChrome() {
+  await delay();
+  return `
+    <h1 style="color: red;">App Header</h1>
+  `;
+}
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headerContent = await getChrome();
+
   return (
     <html lang="en">
       {/*
@@ -8,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head />
 
       <body>
-        <header>RSC HEADER</header>
+        <header dangerouslySetInnerHTML={{ __html: headerContent }}></header>
 
         {children}
 
