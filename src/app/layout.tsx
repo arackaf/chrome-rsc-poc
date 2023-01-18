@@ -1,3 +1,5 @@
+import { Content } from "./Content";
+
 const delay = () => new Promise((res) => setTimeout(res, 100));
 
 async function getChrome() {
@@ -22,11 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <header dangerouslySetInnerHTML={{ __html: headerContent }}></header>
 
         <div>
-          <template shadowroot="open">
-            <h1>Shadow DOM content</h1>
-            <slot></slot>
-            <h1>More Shadow DOM content</h1>
-          </template>
+          <Content />
           <span>This is light dom content</span>
         </div>
 
