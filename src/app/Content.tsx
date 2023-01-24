@@ -9,7 +9,7 @@ export const Content: FC<{ chromeContent: string }> = (props) => {
 
   return (
     <>
-      {isServer ? <template shadowroot="open" dangerouslySetInnerHTML={{ __html: chromeContent }}></template> : null}
+      {isServer ? <template shadowroot="open" dangerouslySetInnerHTML={{ __html: chromeContent }} /> : null}
       {num} <button onClick={() => setNum((x) => x + 1)}>Inc</button>
     </>
   );
