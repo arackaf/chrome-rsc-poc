@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <main style={{ margin: "100px" }}>
       <nav style={{ margin: "50px" }}>
-        <Link href="/info">Info</Link>
+        <Link href="/">Root</Link>
         &nbsp; &nbsp; &nbsp;
         <Link href="/legacy">Legacy</Link>
       </nav>

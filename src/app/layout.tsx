@@ -5,12 +5,14 @@ const delay = () => new Promise((res) => setTimeout(res, 100));
 async function getChrome() {
   await delay();
   return `
-    <h1 style="color: red;">App Header</h1>
+    <h1>Shadow DOM content</h1>
+    <slot></slot>
+    <h1>More Shadow DOM content</h1>
   `;
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const headerContent = await getChrome();
+  const chromeContent = await getChrome();
 
   return (
     <html lang="en">
@@ -21,10 +23,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head />
 
       <body>
-        <header dangerouslySetInnerHTML={{ __html: headerContent }}></header>
-
         <div>
-          <Content />
+          <Content chromeContent={chromeContent} />
           <span>This is light dom content</span>
         </div>
 
