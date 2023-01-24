@@ -1,13 +1,16 @@
+"use client";
+
 import Link from "next/link";
 
-export default function Home() {
+export default function Page() {
   return (
     <main style={{ margin: "100px" }}>
       <nav style={{ margin: "50px" }}>
         <Link href="/info">Info</Link>
-        <Link href="/legacy">Info</Link>
+        &nbsp; &nbsp; &nbsp;
+        <Link href="/legacy">Legacy</Link>
       </nav>
-      <div>ROOT CONTENT</div>
+      <div>INFO PAGE</div>
     </main>
   );
 }
